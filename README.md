@@ -4,7 +4,39 @@ I build developer tools and APIs that turn complex problems into simple interfac
 
 ---
 
-## 🌸 Papalily
+## 🧭 Lodestone — Control Plane for Telegram Agent Fleets
+
+**[github.com/aiex/lodestone](https://github.com/aiex/lodestone)** · A single-channel control plane for a fleet of Telegram agents
+
+You run several agents (bots) that each own different projects on different servers. As the fleet grows you lose the overview — *which agent owns what, and what is it allowed to touch?* Lodestone gives you **one hub group** to see the whole fleet and dispatch work to any agent.
+
+**How it works:**
+- Runs as a **Telegram userbot** (MTProto/Telethon) — can message your agent bots and read their replies
+- **Registry** (SQLite) syncs from `config.yaml` — agents, projects, permissions, logs
+- **AI brain** — natural language routing to the right agent via OpenAI-compatible LLM
+- **Agent Loop** — supervised autonomous runs with token budget + dev/live PR approval gate
+- **Web dashboard** — read-only fleet view with usage/cost charts
+- **Unified memory** — optional TencentDB-Agent-Memory Gateway for cross-agent context
+
+```bash
+git clone https://github.com/aiex/lodestone.git && cd lodestone
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e .
+# configure config/config.yaml, then:
+lodestone init && lodestone login && lodestone run
+```
+
+| | |
+|---|---|
+| 🐙 Source | [github.com/aiex/lodestone](https://github.com/aiex/lodestone) |
+| 📦 Package | `lodestone-hub` |
+| 🧠 AI | OpenAI / Kimi / GLM / Meridian proxy compatible |
+| 💾 Memory | TencentDB-Agent-Memory Gateway (optional) |
+| 🌐 Dashboard | Localhost + token auth, reads SQLite registry |
+
+---
+
+## 🌸 Papalily — My Project
 
 **[papalily.com](https://www.papalily.com)** · AI-powered web scraping API
 
@@ -42,45 +74,13 @@ curl -X POST https://api.papalily.com/scrape \
 
 ---
 
-## 🧭 Lodestone — Control Plane for Telegram Agent Fleets
-
-**[github.com/aiex/lodestone](https://github.com/aiex/lodestone)** · A single-channel control plane for a fleet of Telegram agents
-
-You run several agents (bots) that each own different projects on different servers. As the fleet grows you lose the overview — *which agent owns what, and what is it allowed to touch?* Lodestone gives you **one hub group** to see the whole fleet and dispatch work to any agent.
-
-**How it works:**
-- Runs as a **Telegram userbot** (MTProto/Telethon) — can message your agent bots and read their replies
-- **Registry** (SQLite) syncs from `config.yaml` — agents, projects, permissions, logs
-- **AI brain** — natural language routing to the right agent via OpenAI-compatible LLM
-- **Agent Loop** — supervised autonomous runs with token budget + dev/live PR approval gate
-- **Web dashboard** — read-only fleet view with usage/cost charts
-- **Unified memory** — optional TencentDB-Agent-Memory Gateway for cross-agent context
-
-```bash
-git clone https://github.com/aiex/lodestone.git && cd lodestone
-python3 -m venv .venv && source .venv/bin/activate
-pip install -e .
-# configure config/config.yaml, then:
-lodestone init && lodestone login && lodestone run
-```
-
-| | |
-|---|---|
-| 🐙 Source | [github.com/aiex/lodestone](https://github.com/aiex/lodestone) |
-| 📦 Package | `lodestone-hub` |
-| 🧠 AI | OpenAI / Kimi / GLM / Meridian proxy compatible |
-| 💾 Memory | TencentDB-Agent-Memory Gateway (optional) |
-| 🌐 Dashboard | Localhost + token auth, reads SQLite registry |
-
----
-
 ## 🛠 Repos
 
 | Project | Description |
 |---|---|
+| [lodestone](https://github.com/aiex/lodestone) | Control plane for Telegram agent fleets |
 | [papalily-site](https://github.com/aiex/papalily-site) | Papalily marketing site & blog |
 | [papalily-examples](https://github.com/aiex/papalily-examples) | Code examples — Node.js, Python, PHP, cURL |
-| [lodestone](https://github.com/aiex/lodestone) | Control plane for Telegram agent fleets |
 
 ---
 
