@@ -4,7 +4,7 @@ I build developer tools and APIs that turn complex problems into simple interfac
 
 ---
 
-## 🌸 Papalily — My Project
+## 🌸 Papalily
 
 **[papalily.com](https://www.papalily.com)** · AI-powered web scraping API
 
